@@ -4,7 +4,7 @@
 # include <time.h>
 
 
-# define TOTAL_ERROS 5
+# define TOTAL_ERROS 5 // Tente escolher multiplos de 5
 
 // Variáveis globais
 char palavra[10], espacos[10];
@@ -159,10 +159,10 @@ void mostrar_forca() {
 
     printf("  _______       \n");
     printf(" |/      |      \n");
-    printf(" |      %c%c%c  \n", (erros>=1?'(':' '), (erros>=1?'_':' '), (erros>=1?')':' '));
-    printf(" |      %c%c%c  \n", (erros>=3?'\\':' '), (erros>=2?'|':' '), (erros>=3?'/': ' '));
-    printf(" |       %c     \n", (erros>=2?'|':' '));
-    printf(" |      %c %c   \n", (erros>=4?'/':' '), (erros>=5?'\\':' '));
+    printf(" |      %c%c%c  \n", (erros >= (TOTAL_ERROS / 5) ? '(':' '), (erros >= (TOTAL_ERROS / 5)?'_':' '), (erros >= (TOTAL_ERROS / 5)?')':' '));
+    printf(" |      %c%c%c  \n", (erros >= 3 * (TOTAL_ERROS / 5) ? '\\':' '), (erros >= 2 * (TOTAL_ERROS / 5)?'|':' '), (erros >= 3 * (TOTAL_ERROS / 5)?'/': ' '));
+    printf(" |       %c     \n", (erros >= 2 * (TOTAL_ERROS / 5) ? '|':' '));
+    printf(" |      %c %c   \n", (erros >= 4 * (TOTAL_ERROS / 5) ? '/':' '), (erros >= TOTAL_ERROS?'\\':' '));
     printf(" |              \n");
     printf("_|__ ");
     printf("\n");
